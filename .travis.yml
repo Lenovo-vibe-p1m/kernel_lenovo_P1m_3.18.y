@@ -1,0 +1,21 @@
+sudo: required
+
+before_install:
+- sudo apt-get install zip
+- sudo apt install ccache
+- git clone --recursive https://github.com/Lenovo-vibe-p1m/kernel_lenovo_P1m_3.18.y -b mod ~/p1mk
+- git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 ~/p1mk/tc
+- git clone --recursive https://github.com/varunhardgamer/LazyFlasher ~/p1mk/lf
+script:
+- cd ~/p1mk
+- chmod a+x ~/p1mk/tc
+- chmod a+x ~/p1mk/tc/bin
+- sudo chmod -R 755 ~/p1mk
+- export ARCH=arm64
+- export CROSS_COMPILE=~/p1mk/tc/bin/aarch64-linux-android-
+- mkdir -p out
+- make O=out yl6735m_65u_ov_m_defconfig
+- make O=out -j128
+- cd ~/p1mk/out/arch/arm64/boot
+- curl --upload-file ./zImage-dtb https://transfer.sh/Image.gz-dtb
+- echo All Done
