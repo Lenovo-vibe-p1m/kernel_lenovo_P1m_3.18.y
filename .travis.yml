@@ -17,5 +17,5 @@ script:
 - make O=out yl6735m_65u_ov_m_defconfig
 - make O=out -j128
 - cd ~/p1mk/out/arch/arm64/boot
-- curl --upload-file ./zImage-dtb https://transfer.sh/Image.gz-dtb
+- curl --upload-file ./Image.gz-dtb https://transfer.sh/Image.gz-dtb
 - echo All Done
