@@ -18,8 +18,8 @@ export USE_CCACHE=1
 export ARCH=arm64 ARCH_MTK_PLATFORM=mt6735
 
 #host and user
-export KBUILD_BUILD_USER="DhirajMS"
-export KBUILD_BUILD_HOST="Dracarys"
+export KBUILD_BUILD_USER="Saif001"
+export KBUILD_BUILD_HOST="XenielLabs"
 
 export CROSS_COMPILE=/home/ubuntu/los15/kernel/lenovo/P1m/toolchain/bin/aarch64-linux-android-
 
